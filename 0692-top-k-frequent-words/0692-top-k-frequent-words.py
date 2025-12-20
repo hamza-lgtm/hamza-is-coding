@@ -4,12 +4,9 @@ class Solution:
         for x in words:
             d[x] = d.get(x,0)+1
 
-        data = [(-v,k) for k,v in d.items()]
-        heapq.heapify(data)
-        r = []
-        for i in range(k):
-            value,key = heapq.heappop(data)
-            r.append(key)
+        sorted_items = sorted(d.items(), key=lambda x: (-x[1], x[0]))
+
+        r = [x[0] for x in sorted_items[:k]]
 
         return r
         
