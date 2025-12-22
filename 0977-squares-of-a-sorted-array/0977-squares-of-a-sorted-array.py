@@ -18,8 +18,8 @@ class Solution:
             else:
                 result.insert(0,b)
                 r-=1
-        
-        result.insert(0, nums[l]**2)
+        if len(result) < n:
+            result.insert(0, nums[l]**2)
 
 
         return result
