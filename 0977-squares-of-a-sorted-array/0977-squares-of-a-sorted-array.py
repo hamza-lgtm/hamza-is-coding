@@ -6,20 +6,14 @@ class Solution:
         l,r = 0,n-1
         while l<r:
             a,b = nums[l]**2 , nums[r]**2
-            if a == b :
-                result.insert(0,a)
-                result.insert(0,b)
-                l+=1
-                r-=1
-            elif a>b:
+            if a>=b:
                 result.insert(0,a)
                 l+=1
                 
             else:
                 result.insert(0,b)
                 r-=1
-        if len(result) < n:
-            result.insert(0, nums[l]**2)
+        result.insert(0, nums[l]**2)
 
 
         return result
