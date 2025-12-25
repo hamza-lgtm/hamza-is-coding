@@ -3,15 +3,11 @@ class Solution:
         d = {}
         for x in nums:
             d[x] = d.get(x,0)+1
-
-        data = [(-v,k) for k,v in d.items()]
-        heapq.heapify(data)
+        data = sorted(d.items(),key= lambda x:x[1],reverse=True)
         r = []
         for i in range(k):
-            value,key = heapq.heappop(data)
+            key,value =data[i]
             r.append(key)
 
         return r
-
-
-            
+        
