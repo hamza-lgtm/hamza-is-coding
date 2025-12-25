@@ -3,7 +3,7 @@ class Solution:
         counter = defaultdict()
         for c in s:
             counter[c] = counter.get(c,0)+1
-        t = sorted(counter.items(),key = lambda x :(x[1],x[0]),reverse= True)
+        t = sorted(counter.items(),key = lambda x :x[1],reverse= True)
         res = ''
         for c,n in t:
             res += c*n
