@@ -3,6 +3,9 @@ class Solution:
         counter = defaultdict()
         for c in s:
             counter[c] = counter.get(c,0)+1
-        f = sorted(s,key = lambda c :(counter[c],c),reverse= True)
-        return ''.join(f)
+        t = sorted(counter.items(),key = lambda x :(x[1],x[0]),reverse= True)
+        res = ''
+        for c,n in t:
+            res += c*n
+        return res
         
