@@ -1,19 +1,13 @@
 class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
         seen = {}
-        r = []
-
+        result = []
         for i,x in enumerate(numbers):
-           
-            cmp = target - x
-            if cmp in list(seen.keys()):
-                r.append(seen[cmp])
-                r.append(i+1)
+            c = target - x
+            if c in seen.keys():
+                result.append(seen[c])
+                result.append(i+1)
+                return result
             else:
                 seen[x] = i+1
 
-        return r
-            
-
-
-        
